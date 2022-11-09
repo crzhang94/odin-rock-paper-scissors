@@ -2,19 +2,11 @@
 let playerScore = 0;
 let computerScore = 0;
 
-// Get computer choice: random number between 0, 1, 2
-function getComputerChoice(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min );
-}
-
-// Get computer choice: assign random number to rock, paper, or scissors
-let computerNumber = getComputerChoice(0, 2)
-if (computerNumber = 0) {
-    var computerSelection = "Rock";
-} else if (computerNumber = 1) {
-    var computerSelection = "Paper";
-} else {
-    var computerSelection = "Scissors";
+// Get computer choice: random number between 0, 1, 2, then assign to rock, paper, or scissors
+function getComputerChoice() {
+    const array = ["Rock", "Paper", "Scissors"];
+    let random = array[Math.floor(Math.random() * 3)];
+    return random;
 }
 
 // Get player selection (case-insensitive)
@@ -29,13 +21,14 @@ if (playerInput.toLowerCase() == "rock") {
     console.log('Invalid input. Please input "Rock," "Paper," or "Scissors"');
 }
 
+
 // Play a single round of rock paper scissors
 function playRound(computerSelection, playerSelection) {
-    console.log("Computer: " + computerSelection + ", Player: " + playerSelection);
-     if (computerSelection == "Rock") {
-        if (playerSelection == "Rock") {
-            console.log("Tie");
-        } else if (playerSelection == "Paper") {
+    // console.log("Computer: " + computerSelection + ", Player: " + playerSelection);
+     if (computerSelection == playerSelection) {
+        console.log("Tie")
+     } else if (computerSelection == "Rock") {
+        if (playerSelection == "Paper") {
             playerScore++;
         } else if (playerSelection == "Scissors") {
             computerScore++;
@@ -43,8 +36,6 @@ function playRound(computerSelection, playerSelection) {
      } else if (computerSelection == "Paper") {
         if (playerSelection == "Rock") {
             computerScore++;
-        } else if (playerSelection == "Paper") {
-            console.log("Tie");
         } else if (playerSelection == "Scissors") {
             playerScore++;
         }
@@ -53,8 +44,6 @@ function playRound(computerSelection, playerSelection) {
             playerScore++;
         } else if (playerSelection == "Paper") {
             computerScore++
-        } else if (playerSelection == "Scissors") {
-            console.log("Tie");
         }
      }
      return playerScore;
@@ -81,8 +70,6 @@ if (playerScore > computerScore) {
 } else {
     console.log("Tie!");
 }
-
-
 
 
 
