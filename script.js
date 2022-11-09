@@ -7,16 +7,20 @@ function getComputerChoice() {
 
 // Get player selection (case-insensitive)
 function getPlayerChoice() {
-    let playerInput = prompt("Rock, Paper, or Scissors?");
+    let playerInput;
+    // Check that player input is correct   
+    do {
+        playerInput = prompt("Rock, Paper, or Scissors?");
+    }
+    while (playerInput != "rock" && playerInput != "paper" && playerInput != "scissors");
+
     if (playerInput.toLowerCase() == "rock") {
         return "rock";
     } else if (playerInput.toLowerCase() == "paper") {
         return "paper";
     } else if (playerInput.toLowerCase() == "scissors") {
         return "scissors";
-    } else {
-        console.log('Invalid input. Please input "Rock," "Paper," or "Scissors"');
-    }
+    } 
 }
 
 // Keep track of starting scores
@@ -35,25 +39,26 @@ function playRound() {
      } else if (computerSelection == "rock") {
         if (playerSelection == "paper") {
             playerScore++;
-            console.log("Player wins");
+            console.log("Paper wins");
         } else if (playerSelection == "scissors") {
             computerScore++;
-        }   console.log("Computer wins");
-     } else if (computerSelection == "paper") {
+            console.log("Rock wins");
+        }
+    } else if (computerSelection == "paper") {
         if (playerSelection == "rock") {
             computerScore++;
-            console.log("Computer wins");
+            console.log("Paper wins");
         } else if (playerSelection == "scissors") {
             playerScore++;
-            console.log("Player wins");
+            console.log("Scissors wins");
         }
      } else if (computerSelection == "scissors") {
         if (playerSelection == "rock") {
             playerScore++;
-            console.log("Player wins");
+            console.log("Rock wins");
         } else if (playerSelection == "paper") {
             computerScore++;
-            console.log("Computer wins");
+            console.log("Scissors wins");
         }
      }
 }
@@ -62,22 +67,11 @@ function playRound() {
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
-        /*if (playRound() == "Tie") {
-            console.log("Tie");
-        } else if (playRound() == "Player wins") {
-            console.log("Player wins");
-        } else if (playRound() == "Computer wins") {
-            console.log("Computer wins");
-        } */
-        // console.log("Player: " + playerScore + ", Computer: " + computerScore); 
         console.log("Computer: " + computerScore + ", Player: " + playerScore);
-        i++;
     }
 }
 
 game();
-
-
 
 // Compare player to computer, determine and print winner
 if (playerScore > computerScore) {
