@@ -74,6 +74,17 @@ function playRound(playerSelection) {
      } 
 
      results.appendChild(roundWinner);
+
+     // Keep track of running scores
+     const playerRunningScore = document.createElement('div');
+     playerRunningScore.classList.add('player-score');
+     playerRunningScore.textContent = "Player: " + playerScore;
+     results.appendChild(playerRunningScore);
+
+     const computerRunningScore = document.createElement('div');
+     computerRunningScore.classList.add('computer-score');
+     computerRunningScore.textContent = "Computer: " + computerScore;
+     results.appendChild(computerRunningScore);
 }
 
 
