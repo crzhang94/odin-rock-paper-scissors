@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: darkkhaki;
+}
+
+.contestants {
+    display: flex;
+}
