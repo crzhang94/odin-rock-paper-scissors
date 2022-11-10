@@ -5,11 +5,14 @@ function getComputerChoice() {
     return random;
 }
 
-// Get player selection 
-const buttons = document.querySelector('button');
-buttons.addEventListener('click', () => {
-    playRound();
-})
+// Get player selection ~~~~~~~~
+const buttons = document.querySelectorAll('button');
+// Go through each button
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log("test");
+    });
+});
 
 /* function getPlayerChoice() {
     let playerInput;
