@@ -31,37 +31,49 @@ let computerScore = 0;
 function playRound(playerSelection) {
     // Get new computer selection at the start of the round
     let computerSelection = getComputerChoice();
-    // Show player and computer selection for the round with a pop-up alert
-    console.log("Computer: " + computerSelection + ", Player: " + playerSelection);
-    // Show which selection won the round using a pop up alert
+
+    // Show player and computer selection for the round on the web page
+    const results = document.querySelector('#results');
+
+    const selection = document.createElement('div');
+    selection.classList.add('selection');
+    selection.textContent = "Computer: " + computerSelection + ", Player: " + playerSelection;
+
+    results.appendChild(selection);
+
+    // Show which selection won the round 
+    const roundWinner = document.createElement('div');
+    roundWinner.classList.add('roundWinner');
     
      if (computerSelection == playerSelection) {
-        console.log("Tie");
+        roundWinner.textContent = "Tie";
      } else if (computerSelection == "rock") {
         if (playerSelection == "paper") {
             playerScore++;
-            console.log("Paper wins");
+            roundWinner.textContent = "Paper wins";
         } else if (playerSelection == "scissors") {
             computerScore++;
-            console.log("Rock wins");
+            roundWinner.textContent = "Rock wins";
         }
     } else if (computerSelection == "paper") {
         if (playerSelection == "rock") {
             computerScore++;
-            console.log("Paper wins");
+            roundWinner.textContent = "Paper wins";
         } else if (playerSelection == "scissors") {
             playerScore++;
-            console.log("Scissors wins");
+            roundWinner.textContent = "Scissors wins";
         }
      } else if (computerSelection == "scissors") {
         if (playerSelection == "rock") {
             playerScore++;
-            console.log("Rock wins");
+            roundWinner.textContent = "Rock wins";
         } else if (playerSelection == "paper") {
             computerScore++;
-            console.log("Scissors wins");
+            roundWinner.textContent = "Scissors wins";
         }
      } 
+
+     results.appendChild(roundWinner);
 }
 
 
@@ -105,11 +117,9 @@ function playRound(playerSelection) {
 
 */
 
-// Play 5 rounds of rock paper scissors
-// For now, remove the logic that plays exactly five rounds
 
 /*
-
+// Play 5 rounds of rock paper scissors
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
@@ -128,7 +138,6 @@ if (playerScore > computerScore) {
     console.log("Tie!");
 }
 
+
 */
-
-
 
