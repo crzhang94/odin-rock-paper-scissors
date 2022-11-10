@@ -5,41 +5,33 @@ function getComputerChoice() {
     return random;
 }
 
-// Get player selection ~~~~~~~~
-const buttons = document.querySelectorAll('button');
-// Go through each button
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        console.log("test");
+// Responsive button UI to get player selection and run round
+function getPlayerChoice() {
+    const rock = document.querySelector('#rock');
+    rock.addEventListener('click', () => {
+        playRound("rock");
     });
-});
+    const paper = document.querySelector('#paper');
+    paper.addEventListener('click', () => {
+        playRound("paper");
+    });
+    const scissors = document.querySelector('#scissors');
+    scissors.addEventListener('click', () => {
+        playRound("scissors");
+    });
+} 
 
-/* function getPlayerChoice() {
-    let playerInput;
-    // Check that player input is correct   
-    do {
-        playerInput = prompt("Rock, Paper, or Scissors?");
-    }
-    while (playerInput != "rock" && playerInput != "paper" && playerInput != "scissors");
-
-    if (playerInput.toLowerCase() == "rock") {
-        return "rock";
-    } else if (playerInput.toLowerCase() == "paper") {
-        return "paper";
-    } else if (playerInput.toLowerCase() == "scissors") {
-        return "scissors";
-    } 
-} */ // User will play using button input now, not typing an input
+getPlayerChoice();
 
 // Keep track of starting scores
 let playerScore = 0;
 let computerScore = 0;
 
 // Play a single round of rock paper scissors
-function playRound() {
-    // Get new selections at the start of the round
+function playRound(playerSelection) {
+    // Get new computer selection at the start of the round
     let computerSelection = getComputerChoice();
-    let playerSelection = getPlayerChoice();
+    // let playerSelection = getPlayerChoice();
     console.log("Computer: " + computerSelection + ", Player: " + playerSelection);
 
      if (computerSelection == playerSelection) {
@@ -72,7 +64,10 @@ function playRound() {
 }
 
 // Play 5 rounds of rock paper scissors
-/* function game() {
+
+/*
+
+function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
         console.log("Computer: " + computerScore + ", Player: " + playerScore);
@@ -80,7 +75,7 @@ function playRound() {
 } 
 
 game();
-*/ // For now, remove the logic that plays exactly five rounds
+// For now, remove the logic that plays exactly five rounds
 
 // Compare player to computer, determine and print winner
 if (playerScore > computerScore) {
@@ -90,6 +85,8 @@ if (playerScore > computerScore) {
 } else {
     console.log("Tie!");
 }
+
+*/
 
 
 
