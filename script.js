@@ -27,13 +27,53 @@ getPlayerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
-// Play a single round of rock paper scissors
+// Play a single round of rock paper scissors using button input as player selection
 function playRound(playerSelection) {
     // Get new computer selection at the start of the round
     let computerSelection = getComputerChoice();
-    // let playerSelection = getPlayerChoice();
+    // Show player and computer selection for the round with a pop-up alert
     console.log("Computer: " + computerSelection + ", Player: " + playerSelection);
+    // Show which selection won the round using a pop up alert
+    
+     if (computerSelection == playerSelection) {
+        console.log("Tie");
+     } else if (computerSelection == "rock") {
+        if (playerSelection == "paper") {
+            playerScore++;
+            console.log("Paper wins");
+        } else if (playerSelection == "scissors") {
+            computerScore++;
+            console.log("Rock wins");
+        }
+    } else if (computerSelection == "paper") {
+        if (playerSelection == "rock") {
+            computerScore++;
+            console.log("Paper wins");
+        } else if (playerSelection == "scissors") {
+            playerScore++;
+            console.log("Scissors wins");
+        }
+     } else if (computerSelection == "scissors") {
+        if (playerSelection == "rock") {
+            playerScore++;
+            console.log("Rock wins");
+        } else if (playerSelection == "paper") {
+            computerScore++;
+            console.log("Scissors wins");
+        }
+     } 
+}
 
+
+/*
+
+// Play a single round of rock paper scissors using button input as player selection
+function playRound(playerSelection) {
+    // Get new computer selection at the start of the round
+    let computerSelection = getComputerChoice();
+    // Show player and computer selection for the round
+    console.log("Computer: " + computerSelection + ", Player: " + playerSelection);
+    // Show which selection won the round
      if (computerSelection == playerSelection) {
         console.log("Tie");
      } else if (computerSelection == "rock") {
@@ -63,7 +103,10 @@ function playRound(playerSelection) {
      }
 }
 
+*/
+
 // Play 5 rounds of rock paper scissors
+// For now, remove the logic that plays exactly five rounds
 
 /*
 
@@ -75,7 +118,6 @@ function game() {
 } 
 
 game();
-// For now, remove the logic that plays exactly five rounds
 
 // Compare player to computer, determine and print winner
 if (playerScore > computerScore) {
