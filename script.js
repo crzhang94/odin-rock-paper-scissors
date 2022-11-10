@@ -5,8 +5,13 @@ function getComputerChoice() {
     return random;
 }
 
-// Get player selection (case-insensitive)
-function getPlayerChoice() {
+// Get player selection 
+const buttons = document.querySelector('button');
+buttons.addEventListener('click', () => {
+    playRound();
+})
+
+/* function getPlayerChoice() {
     let playerInput;
     // Check that player input is correct   
     do {
@@ -21,7 +26,7 @@ function getPlayerChoice() {
     } else if (playerInput.toLowerCase() == "scissors") {
         return "scissors";
     } 
-}
+} */ // User will play using button input now, not typing an input
 
 // Keep track of starting scores
 let playerScore = 0;
