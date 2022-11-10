@@ -64,14 +64,15 @@ function playRound() {
 }
 
 // Play 5 rounds of rock paper scissors
-function game() {
+/* function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
         console.log("Computer: " + computerScore + ", Player: " + playerScore);
     }
-}
+} 
 
 game();
+*/ // For now, remove the logic that plays exactly five rounds
 
 // Compare player to computer, determine and print winner
 if (playerScore > computerScore) {
