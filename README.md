@@ -9,5 +9,5 @@ Built with:
 -Javascript
 
 Things I learned:
--Better knowledge of Javascript and DOM basics
+-Better knowledge of Javascript and DOM elements
 -How to create github branches

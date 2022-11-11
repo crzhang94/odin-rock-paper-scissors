@@ -3,16 +3,15 @@ let playerScore = 0;
 let computerScore = 0;
 
 // DOM Elements
-// const buttons = document.querySelector('.buttons')
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-const results = document.querySelector('.results');
 const roundWinner = document.querySelector('.round-winner');
 const pScore= document.querySelector('#player-score');
+const pSelection= document.querySelector('#player-selection');
 const cScore= document.querySelector('#computer-score');
+const cSelection= document.querySelector('#computer-selection');
 const finalWinner = document.querySelector('.final-winner');
-
 
 // Get random computer choice
 function getComputerChoice() {
@@ -43,7 +42,8 @@ function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
 
     // Show player and computer selection for the round 
-    results.textContent = "Computer: " + computerSelection + ", Player: " + playerSelection;
+    pSelection.textContent = playerSelection;
+    cSelection.textContent = computerSelection;
 
     // Show which selection won the round 
      if (computerSelection == playerSelection) {
@@ -75,9 +75,8 @@ function playRound(playerSelection) {
      } 
 
      // Keep track of running scores
-     pScore.textContent = "Player: " + playerScore;
-     cScore.textContent = "Computer: " + computerScore;
-
+     pScore.textContent = playerScore;
+     cScore.textContent = computerScore;
 }
 
 // Notify of winner when someone reaches 5 points
