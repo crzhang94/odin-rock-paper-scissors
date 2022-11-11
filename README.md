@@ -1,7 +1,7 @@
 # odin-rock-paper-scissors
 TOP Foundations: Rock Paper Scissors
 
-Updated version of rock paper scissors to be playing with a UI
+Updated version of rock paper scissors to be play with a UI
 
 Built with:
 -HTML
@@ -9,5 +9,5 @@ Built with:
 -Javascript
 
 Things I learned:
--Better knowledge of Javascript and DOM elements
+-Better knowledge of Javascript and DOM elements to build an interactive website
 -How to create github branches

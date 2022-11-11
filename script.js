@@ -3,6 +3,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 // DOM Elements
+const buttons = document.querySelector('.buttons');
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
@@ -78,12 +79,21 @@ function playRound(playerSelection) {
 function endGame() {
     if (playerScore >= 5) {
         winner.textContent = "Congrats! You win.";
+        disable();
     } else if (computerScore >= 5) {
         winner.textContent = "Game over! You lost.";
+        disable();
     }
 }
 
-// Need a function to stop button input once there is a winner
+// Disables buttons once a winner is declared
+function disable() {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+}
+
+// Consider adding a function to stop button input once there is a winner
 
 // Restart game when the restart button is pressed
 restart.addEventListener('click', () => {
