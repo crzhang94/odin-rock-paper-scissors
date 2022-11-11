@@ -3,11 +3,15 @@ let playerScore = 0;
 let computerScore = 0;
 
 // DOM Elements
-const buttons = document.querySelector('.buttons')
+// const buttons = document.querySelector('.buttons')
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 const results = document.querySelector('.results');
 const roundWinner = document.querySelector('.round-winner');
 const pScore= document.querySelector('#player-score');
 const cScore= document.querySelector('#computer-score');
+const finalWinner = document.querySelector('.final-winner');
 
 
 // Get random computer choice
@@ -18,17 +22,19 @@ function getComputerChoice() {
 }
 
 // Start a round when player hits a button selection
-const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     playRound("rock");
+    endGame();
 });
-const paper = document.querySelector('#paper');
+
 paper.addEventListener('click', () => {
     playRound("paper");
+    endGame();
 });
-const scissors = document.querySelector('#scissors');
+
 scissors.addEventListener('click', () => {
     playRound("scissors");
+    endGame();
 });
 
 // Play a single round of rock paper scissors using button input as player selection
@@ -72,15 +78,20 @@ function playRound(playerSelection) {
      pScore.textContent = "Player: " + playerScore;
      cScore.textContent = "Computer: " + computerScore;
 
-    endGame();
-
 }
 
-// Popup alert to notify of game results when someone reaches 5 points
+// Notify of winner when someone reaches 5 points
 function endGame() {
     if (playerScore >= 5) {
-        alert("Congrats! You win.");
+        finalWinner.textContent = "Congrats! You win.";
+        restartGame();
     } else if (computerScore >= 5) {
-        alert("Game over! You lost.");
+        finalWinner.textContent = "Game over! You lost.";
+        restartGame();
     }
+}
+
+// Reload and restart game when winner is determined
+function restartGame() {
+    location.reload();
 }
