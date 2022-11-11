@@ -47,30 +47,30 @@ function playRound(playerSelection) {
 
     // Show which selection won the round 
      if (computerSelection == playerSelection) {
-        roundWinner.textContent = "Tie";
+        roundWinner.textContent = "Tie! The computer also chose " + playerSelection + ".";
      } else if (computerSelection == "rock") {
         if (playerSelection == "paper") {
             playerScore++;
-            roundWinner.textContent = "Paper wins";
+            roundWinner.textContent = "You win! The computer chose rock.";
         } else if (playerSelection == "scissors") {
             computerScore++;
-            roundWinner.textContent = "Rock wins";
+            roundWinner.textContent = "You lose! The computer chose rock.";
         }
     } else if (computerSelection == "paper") {
         if (playerSelection == "rock") {
             computerScore++;
-            roundWinner.textContent = "Paper wins";
+            roundWinner.textContent = "You lose! The computer chose paper.";
         } else if (playerSelection == "scissors") {
             playerScore++;
-            roundWinner.textContent = "Scissors wins";
+            roundWinner.textContent = "You win! The computer chose paper.";
         }
      } else if (computerSelection == "scissors") {
         if (playerSelection == "rock") {
             playerScore++;
-            roundWinner.textContent = "Rock wins";
+            roundWinner.textContent = "You win! The computer chose scissors.";
         } else if (playerSelection == "paper") {
             computerScore++;
-            roundWinner.textContent = "Scissors wins";
+            roundWinner.textContent = "You lose! The computer chose scissors.";
         }
      } 
 
