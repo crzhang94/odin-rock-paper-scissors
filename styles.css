@@ -31,7 +31,7 @@ button {
     gap: 50px;
 }
 
-.round-winner {
+.winner {
     display: flex;
     justify-content: center;
     height: 20px;

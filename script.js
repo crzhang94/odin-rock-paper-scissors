@@ -6,11 +6,9 @@ let computerScore = 0;
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-const roundWinner = document.querySelector('.round-winner');
+const winner = document.querySelector('.winner');
 const pScore= document.querySelector('#player-score');
-const pSelection= document.querySelector('#player-selection');
 const cScore= document.querySelector('#computer-score');
-const cSelection= document.querySelector('#computer-selection');
 const finalWinner = document.querySelector('.final-winner');
 
 // Get random computer choice
@@ -41,36 +39,32 @@ function playRound(playerSelection) {
     // Get new computer selection at the start of the round
     let computerSelection = getComputerChoice();
 
-    // Show player and computer selection for the round 
-    pSelection.textContent = playerSelection;
-    cSelection.textContent = computerSelection;
-
     // Show which selection won the round 
      if (computerSelection == playerSelection) {
-        roundWinner.textContent = "Tie! The computer also chose " + playerSelection + ".";
+        winner.textContent = "Tie! The computer also chose " + playerSelection + ".";
      } else if (computerSelection == "rock") {
         if (playerSelection == "paper") {
             playerScore++;
-            roundWinner.textContent = "You win! The computer chose rock.";
+            winner.textContent = "You win! The computer chose rock.";
         } else if (playerSelection == "scissors") {
             computerScore++;
-            roundWinner.textContent = "You lose! The computer chose rock.";
+            winner.textContent = "You lose! The computer chose rock.";
         }
     } else if (computerSelection == "paper") {
         if (playerSelection == "rock") {
             computerScore++;
-            roundWinner.textContent = "You lose! The computer chose paper.";
+            winner.textContent = "You lose! The computer chose paper.";
         } else if (playerSelection == "scissors") {
             playerScore++;
-            roundWinner.textContent = "You win! The computer chose paper.";
+            winner.textContent = "You win! The computer chose paper.";
         }
      } else if (computerSelection == "scissors") {
         if (playerSelection == "rock") {
             playerScore++;
-            roundWinner.textContent = "You win! The computer chose scissors.";
+            winner.textContent = "You win! The computer chose scissors.";
         } else if (playerSelection == "paper") {
             computerScore++;
-            roundWinner.textContent = "You lose! The computer chose scissors.";
+            winner.textContent = "You lose! The computer chose scissors.";
         }
      } 
 
@@ -82,11 +76,11 @@ function playRound(playerSelection) {
 // Notify of winner when someone reaches 5 points
 function endGame() {
     if (playerScore >= 5) {
-        finalWinner.textContent = "Congrats! You win.";
-        restartGame();
+        winner.textContent = "Congrats! You win.";
+        // restartGame();
     } else if (computerScore >= 5) {
-        finalWinner.textContent = "Game over! You lost.";
-        restartGame();
+        winner.textContent = "Game over! You lost.";
+        // restartGame();
     }
 }
 
