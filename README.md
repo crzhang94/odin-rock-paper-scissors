@@ -8,6 +8,7 @@ Built with:
 -CSS
 -Javascript
 
-Things I learned:
+Skills utilized/gained:
 -Better knowledge of Javascript and DOM elements to build an interactive website
+-How to disable buttons and add event listeners
 -How to create github branches
