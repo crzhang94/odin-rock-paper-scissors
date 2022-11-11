@@ -3,7 +3,10 @@ let playerScore = 0;
 let computerScore = 0;
 
 // DOM Elements
-const results = document.querySelector('#results');
+const buttons = document.querySelector('.buttons')
+const results = document.querySelector('.results');
+const roundWinner = document.querySelector('.round-winner');
+const score= document.querySelector('.score');
 
 getPlayerChoice();
 
@@ -35,18 +38,10 @@ function playRound(playerSelection) {
     // Get new computer selection at the start of the round
     let computerSelection = getComputerChoice();
 
-    // Show player and computer selection for the round on the web page
-    
-
-    const selection = document.createElement('div');
-    selection.classList.add('selection');
-    selection.textContent = "Computer: " + computerSelection + ", Player: " + playerSelection;
-
-    results.appendChild(selection);
+    // Show player and computer selection for the round 
+    results.textContent = "Computer: " + computerSelection + ", Player: " + playerSelection;
 
     // Show which selection won the round 
-    roundWinner.classList.add('roundWinner');
-    
      if (computerSelection == playerSelection) {
         roundWinner.textContent = "Tie";
      } else if (computerSelection == "rock") {
@@ -74,8 +69,6 @@ function playRound(playerSelection) {
             roundWinner.textContent = "Scissors wins";
         }
      } 
-
-     results.appendChild(roundWinner);
 
      // Keep track of running scores
      const playerRunningScore = document.createElement('div');
