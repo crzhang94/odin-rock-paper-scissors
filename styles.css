@@ -51,3 +51,8 @@ button {
     padding: 20px 60px;
     text-align: center;
 }
+
+.restart {
+    display: flex;
+    justify-content: center;
+}

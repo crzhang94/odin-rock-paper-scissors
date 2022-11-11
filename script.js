@@ -10,6 +10,7 @@ const winner = document.querySelector('.winner');
 const pScore= document.querySelector('#player-score');
 const cScore= document.querySelector('#computer-score');
 const finalWinner = document.querySelector('.final-winner');
+const restart = document.querySelector("#restart");
 
 // Get random computer choice
 function getComputerChoice() {
@@ -77,14 +78,16 @@ function playRound(playerSelection) {
 function endGame() {
     if (playerScore >= 5) {
         winner.textContent = "Congrats! You win.";
-        // restartGame();
     } else if (computerScore >= 5) {
         winner.textContent = "Game over! You lost.";
-        // restartGame();
     }
 }
 
-// Reload and restart game when winner is determined
-function restartGame() {
-    location.reload();
-}
+// Need a function to stop button input once there is a winner
+
+// Restart game when the restart button is pressed
+restart.addEventListener('click', () => {
+    if (confirm("Are you sure you want to restart?") == true) {
+        location.reload();
+    }
+})
