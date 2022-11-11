@@ -6,9 +6,9 @@ let computerScore = 0;
 const buttons = document.querySelector('.buttons')
 const results = document.querySelector('.results');
 const roundWinner = document.querySelector('.round-winner');
-const score= document.querySelector('.score');
+const pScore= document.querySelector('#player-score');
+const cScore= document.querySelector('#computer-score');
 
-getPlayerChoice();
 
 // Get random computer choice
 function getComputerChoice() {
@@ -18,20 +18,18 @@ function getComputerChoice() {
 }
 
 // Start a round when player hits a button selection
-function getPlayerChoice() {
-    const rock = document.querySelector('#rock');
-    rock.addEventListener('click', () => {
-        playRound("rock");
-    });
-    const paper = document.querySelector('#paper');
-    paper.addEventListener('click', () => {
-        playRound("paper");
-    });
-    const scissors = document.querySelector('#scissors');
-    scissors.addEventListener('click', () => {
-        playRound("scissors");
-    });
-}
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    playRound("rock");
+});
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    playRound("paper");
+});
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    playRound("scissors");
+});
 
 // Play a single round of rock paper scissors using button input as player selection
 function playRound(playerSelection) {
@@ -71,46 +69,18 @@ function playRound(playerSelection) {
      } 
 
      // Keep track of running scores
-     const playerRunningScore = document.createElement('div');
-     playerRunningScore.classList.add('player-score');
-     playerRunningScore.textContent = "Player: " + playerScore;
-     results.appendChild(playerRunningScore);
+     pScore.textContent = "Player: " + playerScore;
+     cScore.textContent = "Computer: " + computerScore;
 
-     const computerRunningScore = document.createElement('div');
-     computerRunningScore.classList.add('computer-score');
-     computerRunningScore.textContent = "Computer: " + computerScore;
-     results.appendChild(computerRunningScore);
+    endGame();
 
-    // Popup alert to notify of game results when someone reaches 5 points
-     if (playerScore >= 5) {
+}
+
+// Popup alert to notify of game results when someone reaches 5 points
+function endGame() {
+    if (playerScore >= 5) {
         alert("Congrats! You win.");
     } else if (computerScore >= 5) {
         alert("Game over! You lost.");
     }
 }
-
-
-
-/*
-// Play 5 rounds of rock paper scissors
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playRound();
-        console.log("Computer: " + computerScore + ", Player: " + playerScore);
-    }
-} 
-
-game();
-
-// Compare player to computer, determine and print winner
-if (playerScore > computerScore) {
-    console.log("Player wins!");
-} else if (playerScore < computerScore) {
-    console.log("Computer wins!");
-} else {
-    console.log("Tie!");
-}
-
-
-*/
-
