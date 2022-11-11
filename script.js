@@ -2,7 +2,12 @@
 let playerScore = 0;
 let computerScore = 0;
 
-// Get computer choice: random number between 0, 1, 2, then assign to rock, paper, or scissors
+// DOM Elements
+const results = document.querySelector('#results');
+
+getPlayerChoice();
+
+// Get random computer choice
 function getComputerChoice() {
     const array = ["rock", "paper", "scissors"];
     let random = array[Math.floor(Math.random() * 3)];
@@ -25,17 +30,13 @@ function getPlayerChoice() {
     });
 }
 
-getPlayerChoice();
-
-
-
 // Play a single round of rock paper scissors using button input as player selection
 function playRound(playerSelection) {
     // Get new computer selection at the start of the round
     let computerSelection = getComputerChoice();
 
     // Show player and computer selection for the round on the web page
-    const results = document.querySelector('#results');
+    
 
     const selection = document.createElement('div');
     selection.classList.add('selection');
@@ -44,7 +45,6 @@ function playRound(playerSelection) {
     results.appendChild(selection);
 
     // Show which selection won the round 
-    const roundWinner = document.createElement('div');
     roundWinner.classList.add('roundWinner');
     
      if (computerSelection == playerSelection) {
