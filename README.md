@@ -12,3 +12,7 @@ Live preview link: https://crzhang94.github.io/odin-rock-paper-scissors
 * Better knowledge of utilizing Javascript and DOM elements to build an interactive website
 * Disabling buttons and adding event listeners
 * Creating github branches
+
+## Note
+* This is not responsive to mobile or tablet devices and is best viewed on a computer
+* I plan to come back and add additional features once I have learned more
