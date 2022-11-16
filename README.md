@@ -2,7 +2,7 @@
 
 Updated version of rock paper scissors to be play with a basic UI. Created with HTML/CSS/JS as part of The Odin Project's Foundations curriculum. 
 
-Live preview link: https://crzhang94.github.io/odin-rock-paper-scissors
+Live preview link: https://crzhang94.github.io/rock-paper-scissors
 
 ## Approximate time spent
 * 6 hours writing Javascript and HTML code
